@@ -1,0 +1,36 @@
+body {
+  font-family: sans-serif;
+  text-align: center;
+  padding: 10px;
+  overflow: scroll;
+}
+
+p {
+  word-break: break-all;
+}
+
+form input {
+  width: 100%;
+  max-width: 400px;
+}
+
+button {
+  background-color: white;
+  color: green;
+}
+
+.header,
+.post,
+.new {
+  border-style: solid;
+  border-width: 10px;
+  border-color: white;
+}
+
+.post {
+  padding: 5px;
+}
+
+.new {
+  padding: 15px;
+}

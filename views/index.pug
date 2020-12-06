@@ -1,0 +1,37 @@
+extends layout
+
+block content
+  .header.w3-container.w3-row.w3-pale-green
+    .w3-threequarter
+      h1 Our place 
+
+    .w3-quarter
+      form(method='GET' action='/search')
+        div.form-group
+          label(for='author') Filter by author: 
+          input#user.form-control(type='text' name='author' maxlength="20")
+        button.btn.btn-primary(type='submit') Filter
+
+  div.w3-container.w3-row
+    .new.w3-third.w3-pale-green
+      h2 Make a new post
+
+      form(method='POST' action='/create')
+              div.form-group
+                label(for='name') Your name: 
+                input#name.form-control(type='text' name='author' maxlength="20")
+              div.form-group
+                label(for='content') What do you have to say? 
+                input#content.form-control(type='text' name='content' maxlength="200")
+              button.btn.btn-primary(type='submit') Submit
+
+    .posts.w3-twothird
+      each post in postlist.reverse()
+        .post.w3-half.w3-pale-green
+          p 
+            | #{post.author} says: 
+          p 
+            | #{post.content}
+
+      else
+        p There are no posts.
