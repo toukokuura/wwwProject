@@ -8,7 +8,7 @@ var postcontroller = require("../controllers/postController");
 router.get("/", postcontroller.index);
 
 // filter by author
-router.get("/search", postcontroller.search);
+router.post("/search", postcontroller.search);
 
 // create a new post
 router.post("/create", postcontroller.create);

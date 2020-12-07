@@ -11,7 +11,11 @@ p {
 
 form input {
   width: 100%;
-  max-width: 400px;
+  max-width: 300px;
+}
+
+form label {
+  display: block;
 }
 
 button {

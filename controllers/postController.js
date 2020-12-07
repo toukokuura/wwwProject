@@ -20,7 +20,6 @@ exports.search = function (req, res, next) {
   sanitizeBody("*").trim().escape();
 
   // get posts with x author
-
   Post.find({ author: req.body.author }).exec((err, postlist) => {
     if (err) {
       return next(err);
@@ -40,7 +39,7 @@ exports.create = function (req, res, next) {
     if (err) {
       return next(err);
     }
-    // Successful - redirect to new book record.
+    // Successful - redirect to main page
     res.redirect("/");
   });
 };
