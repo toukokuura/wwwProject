@@ -1,9 +1,8 @@
 var createError = require("http-errors");
 var express = require("express");
 var path = require("path");
-var cookieParser = require("cookie-parser");
-var logger = require("morgan");
 var Promise = require("bluebird");
+var logger = require("morgan");
 
 // for servers
 Object.assign = require("object-assign");
@@ -60,10 +59,6 @@ if (mongoURL == null) {
 }
 
 /*------------Connecting to DB----------------*/
-// mongoose.connect(mongoURL, {
-//   useNewUrlParser: true,
-//   useUnifiedTopology: true
-// });
 mongoose.connect(mongoURL);
 mongoose.Promise = Promise;
 var db = mongoose.connection;
@@ -76,7 +71,6 @@ app.set("view engine", "pug");
 app.use(logger("dev"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
-app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
 
 /*------------routes----------------*/

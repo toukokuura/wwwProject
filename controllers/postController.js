@@ -1,6 +1,7 @@
 var Post = require("../models/post");
 
 //validate
+// body and validationresult are not needed because there arent specific requirements for inputs
 //const { body, validationResult } = require("express-validator");
 const { sanitizeBody } = require("express-validator");
 
